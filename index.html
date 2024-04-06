@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live 2-Digit Number</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="number-display">00</div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+  var numberDisplay = document.getElementById("number-display");
+
+  // Function to update the displayed number every second
+  function updateNumber() {
+    var randomNumber = Math.floor(Math.random() * 100); // Generate a random number between 0 and 99
+    var formattedNumber = randomNumber.toString().padStart(2, "0"); // Format the number with leading zeros
+    numberDisplay.textContent = formattedNumber; // Update the displayed number
+  }
+
+  // Update the number every second
+  setInterval(updateNumber, 1000);
+});
+
+  </script>
+</body>
+<style>
+    #number-display {
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 50px;
+}
+
+</style>
+</html>
